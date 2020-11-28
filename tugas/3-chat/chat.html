@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+</head>
+<body class="chat">
+    <h3>Hello My Name Is YoBot</h3>
+    <h5>Ketik "hello" untuk berkomunikasi dengan YoBot</h5>
+    <input type="text" name="yobot" placeholder="Talk To YoBot" class="chatbot" id="getValue" onkeypress="Search()">
+
+    <script>
+        function Search() {
+            var get = document.getElementById("getValue").value;
+            if (get == "hello"){
+                alert("Hai, Apa Kabar?")
+            }
+            else if (get == "apa kabar?"){
+                alert("Aku baik, terima kasih")
+            } 
+        }
+    </script>
+
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-size: 100%;
+        }
+
+        h3 {
+            color: #e7e7e7;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.7);
+        }
+
+        h5 {
+            color: black;
+            position: absolute;
+            top: 30%;
+            left: 40%;
+        }
+
+        .chatbot {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 50px;
+            border: none;
+            text-align: center;
+            position: absolute;
+            top: 40%;
+            left: 25%;
+            width: 50%;
+            height: 35px;
+            transition: 0.8s;
+        }
+    </style>
+</body>
+</html>

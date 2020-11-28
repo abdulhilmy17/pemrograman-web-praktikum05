@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heading">
+        <h1>Image Picker</h1>
+    </div>
+    <div class="col-2">
+        Pilih Anime Favorit: <select id="anime" class="form-control" onchange="pilih()">
+            <option value="naruto">Naruto</option>
+            <option value="luffy">Luffy</option>
+            <option value="doraemon">Doraemon</option>
+            <option value="spongebob">Spongebob</option>
+            <option value="ichigo">Bleach</option>
+        </select>
+    </div>
+
+    <div>
+       <img src="images/naruto.jpg" alt="naruto" id="gambar">
+    </div>
+
+    <script>
+       function pilih() {
+           var list = document.getElementById("anime");
+           var idx = list.selectedIndex;
+           console.log("Anime Favorit Saya " + list[idx].value);
+
+           var area_gambar = document.getElementById("gambar");
+           area_gambar.src = "images/" + list[idx].value + ".jpg";
+       } 
+    </script>
+
+    <style>
+        .heading {
+            text-align: center;
+        }
+
+        img {
+            margin-top: 50px;
+            margin-left: 15px;
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Mata Uang</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/tugas/style.css">
+</head>
+<body>
+  <div class="judul">
+      <h1>Konversi Mata Uang Asing</h1>
+  </div>
+  <div class="container">
+    <table>
+      <tr>
+        <td> 
+          <form id="form1" name="form1" onsubmit="return false" class="form1">
+            <div class="col-12">
+              <h2>Mata Uang Asal</h2>
+              <select id="nilai" class="form-control">
+                <option value="nilai1">Indonesia-Rupiah</option>
+                <option value="nilai2">Inggris-Poundsterling</option>
+                <option value="nilai3">Amerika-Dollar</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <input type="text" id="data" placeholder="Masukkan angka" class="form-control">
+            </div>
+          <button class="btn btn-primary tombol" onclick="hitung()">Hitung</button>
+          </form>
+        </td>
+
+        <td>
+          <form id="form2" name="form2" onsubmit="return false" class="form2">
+            <div class="col-12">
+              <h2>Mata Uang tujuan</h2>
+              <select id="hasil" class="form-control">
+                <option value="hasil1">Indonesia-Rupiah</option>
+                <option value="hasil2">Inggris-Poundsterling</option>
+                <option value="hasil3">Amerika-Dollar</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <p class="form-control" id="show">Hasil</p>
+            </div>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    function hitung() {
+      var nilai_uang = document.getElementById("form1").nilai.value;
+      var nilai_tukar = document.getElementById("form2").hasil.value;
+      var jumlah = parseFloat(data.value);
+
+      if (nilai_uang == "nilai3" && nilai_tukar == "hasil1") {
+        var hasil = jumlah * 13992;
+        document.getElementById("show").innerHTML = hasil;
+      } else if (nilai_uang == "nilai2" && nilai_tukar == "hasil1") {
+        var hasil = jumlah * 18838;
+        document.getElementById("show").innerHTML = hasil;
+      } else if (nilai_uang == "nilai1" && nilai_tukar == "hasil1") {
+        var hasil = jumlah;
+        document.getElementById("show").innerHTML = hasil;
+      } else if (nilai_uang == "nilai3" && nilai_tukar == "hasil2") {
+        var hasil = jumlah * 0.75;
+        document.getElementById("show").innerHTML = hasil;
+      } else if (nilai_uang == "nilai2" && nilai_tukar == "hasil2") {
+        var hasil = jumlah;
+        document.getElementById("show").innerHTML = hasil;
+      } else if (nilai_uang == "nilai1" && nilai_tukar == "hasil2") {
+        var hasil = jumlah * 0.000053;
+        document.getElementById("show").innerHTML = hasil;
+      } else if (nilai_uang == "nilai3" && nilai_tukar == "hasil3") {
+        var hasil = jumlah;
+        document.getElementById("show").innerHTML = hasil;
+      } else if (nilai_uang == "nilai2" && nilai_tukar == "hasil3") {
+        var hasil = jumlah * 0.74;
+        document.getElementById("show").innerHTML = hasil;
+      } else if (nilai_uang == "nilai1" && nilai_tukar == "hasil3") {
+        var hasil = jumlah * 0.000071;
+        document.getElementById("show").innerHTML = hasil;
+      }
+    }
+  </script>
+
+  <style>
+    .judul {
+      text-align: center;
+    }
+
+    .form1 {
+      margin-right: 50px;
+      margin-top: 55px;
+    }
+
+    .tombol {
+      margin-top: 40px;
+      margin-left: 90px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  </style>
+</body>
+</html>

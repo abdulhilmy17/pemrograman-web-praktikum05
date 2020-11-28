@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+        <h4>Form Pendaftaran Mahasiswa</h4>
+    </div>
+    <form name="formPendaftaran" action="daftar.php" method="post" class="formfendaftaran" onsubmit="return validateForm()">
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Nama</label>
+          <div class="col-sm-5">
+              <input type="text" name="nama" placeholder="Nama lengkap" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Tempat/Tangal Lahir</label>
+          <div class="col-sm-5">
+              <input type="text" name="tempat" placeholder="Tempat" class="form-control">
+          </div>
+
+          <div class="col-sm-1">
+              <select name="tanggal lahir" class="form-control">
+                  <option value="1" selected="selected">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+              </select>
+          </div>
+          <div class="col-sm-2">
+              <select name="bulan" class="form-control">
+                  <option value="1" selected="selected">Januari</option>
+                  <option value="2" selected="selected">Februari</option>
+                  <option value="3" selected="selected">Maret</option>
+                  <option value="4" selected="selected">April</option>
+                  <option value="5" selected="selected">Mei</option>
+                  <option value="6" selected="selected">Juni</option>
+                  <option value="7" selected="selected">Juli</option>
+                  <option value="8" selected="selected">Agustus</option>
+                  <option value="9" selected="selected">September</option>
+                  <option value="10" selected="selected">Oktober</option>
+                  <option value="11" selected="selected">November</option>
+                  <option value="12" selected="selected">Desember</option>
+              </select>
+          </div>
+          <div class="col-sm-2">
+              <select name="tahun" class="form-control">
+                  <option value="1" selected="selected">1990</option>
+                  <option value="2" selected="selected">1991</option>
+                  <option value="3" selected="selected">1992</option>
+                  <option value="4" selected="selected">1993</option>
+                  <option value="5" selected="selected">1994</option>
+                  <option value="6" selected="selected">1995</option>
+                  <option value="7" selected="selected">1996</option>
+                  <option value="8" selected="selected">1997</option>
+                  <option value="9" selected="selected">1998</option>
+                  <option value="10" selected="selected">1999</option>
+                  <option value="11" selected="selected">2000</option>
+                  <option value="12" selected="selected">2001</option>
+                  <option value="13" selected="selected">2002</option>
+                  <option value="14" selected="selected">2003</option>
+              </select>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Agama</label>
+          <div class="col-sm-5">
+              <input type="text" name="agama" placeholder="Agama" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">No. Ijazah SMK</label>
+          <div class="col-sm-5">
+              <input type="text" name="ijazah" placeholder="No. Ijazah" class="form-control">
+          </div>
+      </div>
+
+      <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Jenis Kelamin</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  Laki-Laki
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  Perempuan
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Foto</label>
+          <div class="col-sm-5">
+              <input type="file" name="file" max="200kb" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Nama Ayah</label>
+          <div class="col-sm-5">
+              <input type="text" name="ayah" placeholder="Nama Ayah" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Nama Ibu</label>
+          <div class="col-sm-5">
+              <input type="text" name="ibu" placeholder="Nama Ibu" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Alamat</label>
+          <div class="col-sm-5">
+              <textarea name="alamat" placeholder="Alamat" cols="30" rows="10" class="form-control"></textarea>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">No. Telp</label>
+          <div class="col-sm-5">
+              <input type="text" name="telpon" placeholder="No. Telp" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Nama Sekolah Asal</label>
+          <div class="col-sm-5">
+              <input type="text" name="namasekolah" placeholder="Sekolah Asal" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Alamat Sekolah Asal</label>
+          <div class="col-sm-5">
+              <input type="text" name="alamatsekolah" placeholder="Alamat Sekolah Asal" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-5">
+              <input type="email" name="email" placeholder="Email Aktif" class="form-control">
+              <small id="emailHelp" class="form-text text-muted">Email Akan Digunakan Untuk Mengirimkan Notifikasi.</small>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Jurusan Dipilih</label>
+          <div class="col-sm-5">
+              <select name="jurusan" class="form-control">
+                  <option value="0">Pilih Jurusan</option>
+                  <option value="1">Jurusan Informatika</option>
+                  <option value="2">Jurusan Teknik Komputer Jaringan</option>
+              </select>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Mengetahui Informasi Dari</label>
+          <div class="col-sm-5">
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck1" name="info">
+                  <label class="form-check-label" for="gridCheck1">
+                      Medsos
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck2" name="info">
+                  <label class="form-check-label" for="gridCheck2">
+                      Web
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck3" name="info">
+                  <label class="form-check-label" for="gridCheck3">
+                      Kerabat
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck4" name="info">
+                  <label class="form-check-label" for="gridCheck4">
+                      Agent
+                  </label>
+              </div>
+          </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <style>
+      table {
+        margin-left: 250px;
+        margin-top: 50px;
+    }
+
+    .formfendaftaran {
+        margin-top: 100px;
+    }   
+  </style>
+</body>
+</html>
+<script>
+    function validateForm() {
+        if (document.forms["formPendaftaran"]["nama"].value == "") {
+            alert("Nama Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["nama"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["tempat"].value == "") {
+            alert("Tempat Lahir Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["tempat"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["tanggal lahir"].selectedIndex < 1) {
+            alert("Pilih Tanggal Lahir.");
+            document.forms["formPendaftaran"]["tanggal lahir"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["bulan"].selectedIndex < 1) {
+            alert("Pilih Bulan.");
+            document.forms["formPendaftaran"]["bulan"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["tahun"].selectedIndex < 1) {
+            alert("Pilih Tahun.");
+            document.forms["formPendaftaran"]["tahun"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["agama"].value == "") {
+            alert("Pilih Agama.");
+            document.forms["formPendaftaran"]["agama"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["ijazah"].value == "") {
+            alert("No. Ijazah Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["ijazah"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["gridRadios"].value == "") {
+            alert("Jenis Kelamin Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["gridRadios"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["file"].value == "") {
+            alert("File Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["file"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["ayah"].value == "") {
+            alert("Nama Ayah Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["ayah"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["ibu"].value == "") {
+            alert("Nama Ibu Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["ibu"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["alamat"].value == "") {
+            alert("Alamat Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["alamat"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["telpon"].value == "") {
+            alert("No. Telp Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["telpon"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["namasekolah"].value == "") {
+            alert("Nama Sekolah Asal Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["namasekolah"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["alamatsekolah"].value == "") {
+            alert("Alamat Sekolah Asal Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["alamatsekolah"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["email"].value == "") {
+            alert("Email Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["email"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["jurusan"].selectedIndex < 1) {
+            alert("Pilih Jurusan.");
+            document.forms["formPendaftaran"]["jurusan"].focus();
+            return false;
+        }
+        if (document.forms["formPendaftaran"]["info"].value == "") {
+            alert("Info Tidak Boleh Kosong");
+            document.forms["formPendaftaran"]["info"].focus();
+            return false;
+        }
+    }
+</script>
